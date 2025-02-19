@@ -1,230 +1,223 @@
-# Create grid for RandomSearchCV
-
-# For running multiple randomized search grids. So some can be very specific with only one possible set of parameters, and the model for that option will be saved,
-# and the predicted UQS using that model will be saved
-randomized_search_grids_dictionary = {} # Structure: Level 1 - Name of randomized search grid,    Level 2 - randomized search grid
 
 
 
+# # === BROAD DEFAULT 1 ===
+# # Results: we can get almost as good performance with 200 as 800, so choose 200 due to computing resource limitations and space limitations.
+# n_estimators = [100, 200, 400, 600, 800]
+# max_depth = [20, 30, 40, 50] # After BROAD 2 results: Low values are not good.
+# max_features = ["sqrt", 6]
+# min_samples_leaf = [1, 2, 4, 8, 15, 25] # After BROAD 2 results: High values are not good.
+# min_samples_split = [2, 5, 10, 20, 40] # After BROAD 2 results: High values are not good
+# bootstrap = [True, False] # After BROAD 2 results: seems to perform better without bootstrapping
 
+# randomized_search_grid = {'n_estimators': n_estimators,
+#                'max_depth': max_depth,
+#                'max_features': max_features,
+#                'min_samples_leaf': min_samples_leaf,
+#                'min_samples_split': min_samples_split,
+#                'bootstrap': bootstrap}
 
-# === BROAD DEFAULT 1 ===
-# Results: we can get almost as good performance with 200 as 800, so choose 200 due to computing resource limitations and space limitations.
-n_estimators = [100, 200, 400, 600, 800]
-max_depth = [20, 30, 40, 50] # After BROAD 2 results: Low values are not good.
-max_features = ["sqrt", 6]
-min_samples_leaf = [1, 2, 4, 8, 15, 25] # After BROAD 2 results: High values are not good.
-min_samples_split = [2, 5, 10, 20, 40] # After BROAD 2 results: High values are not good
-bootstrap = [True, False] # After BROAD 2 results: seems to perform better without bootstrapping
-
-randomized_search_grid = {'n_estimators': n_estimators,
-               'max_depth': max_depth,
-               'max_features': max_features,
-               'min_samples_leaf': min_samples_leaf,
-               'min_samples_split': min_samples_split,
-               'bootstrap': bootstrap}
-
-randomized_search_grids_dictionary["BROAD_DEFAULT_1"] = randomized_search_grid
+# randomized_search_grids_dictionary["BROAD_DEFAULT_1"] = randomized_search_grid
 
 
 
 
 
 
-# === SPECIFIC FINAL 1 ===
-# Results:
-n_estimators = [100] 
-max_depth = [30]
-max_features = ["sqrt"]
-min_samples_leaf = [1]
-min_samples_split = [2]
-bootstrap = [False]
+# # === SPECIFIC FINAL 1 ===
+# # Results:
+# n_estimators = [100] 
+# max_depth = [30]
+# max_features = ["sqrt"]
+# min_samples_leaf = [1]
+# min_samples_split = [2]
+# bootstrap = [False]
 
-randomized_search_grid = {'n_estimators': n_estimators,
-               'max_depth': max_depth,
-               'max_features': max_features,
-               'min_samples_leaf': min_samples_leaf,
-               'min_samples_split': min_samples_split,
-               'bootstrap': bootstrap}
-randomized_search_grids_dictionary["SPECIFIC_FINAL_1"] = randomized_search_grid
-
-
-
-# === SPECIFIC FINAL 2 ===
-# Results:
-n_estimators = [200] 
-max_depth = [30]
-max_features = ["sqrt"]
-min_samples_leaf = [1]
-min_samples_split = [2]
-bootstrap = [False]
-
-randomized_search_grid = {'n_estimators': n_estimators,
-               'max_depth': max_depth,
-               'max_features': max_features,
-               'min_samples_leaf': min_samples_leaf,
-               'min_samples_split': min_samples_split,
-               'bootstrap': bootstrap}
-randomized_search_grids_dictionary["SPECIFIC_FINAL_2"] = randomized_search_grid
+# randomized_search_grid = {'n_estimators': n_estimators,
+#                'max_depth': max_depth,
+#                'max_features': max_features,
+#                'min_samples_leaf': min_samples_leaf,
+#                'min_samples_split': min_samples_split,
+#                'bootstrap': bootstrap}
+# randomized_search_grids_dictionary["SPECIFIC_FINAL_1"] = randomized_search_grid
 
 
 
+# # === SPECIFIC FINAL 2 ===
+# # Results:
+# n_estimators = [200] 
+# max_depth = [30]
+# max_features = ["sqrt"]
+# min_samples_leaf = [1]
+# min_samples_split = [2]
+# bootstrap = [False]
 
-# === SPECIFIC FINAL 3 ===
-# Results:
-n_estimators = [100] 
-max_depth = [30]
-max_features = ["sqrt"]
-min_samples_leaf = [2]
-min_samples_split = [4]
-bootstrap = [False]
-
-randomized_search_grid = {'n_estimators': n_estimators,
-               'max_depth': max_depth,
-               'max_features': max_features,
-               'min_samples_leaf': min_samples_leaf,
-               'min_samples_split': min_samples_split,
-               'bootstrap': bootstrap}
-randomized_search_grids_dictionary["SPECIFIC_FINAL_3"] = randomized_search_grid
+# randomized_search_grid = {'n_estimators': n_estimators,
+#                'max_depth': max_depth,
+#                'max_features': max_features,
+#                'min_samples_leaf': min_samples_leaf,
+#                'min_samples_split': min_samples_split,
+#                'bootstrap': bootstrap}
+# randomized_search_grids_dictionary["SPECIFIC_FINAL_2"] = randomized_search_grid
 
 
 
 
-# === SPECIFIC FINAL 4 ===
-# Results:
-n_estimators = [200] 
-max_depth = [30]
-max_features = ["sqrt"]
-min_samples_leaf = [2]
-min_samples_split = [4]
-bootstrap = [False]
+# # === SPECIFIC FINAL 3 ===
+# # Results:
+# n_estimators = [100] 
+# max_depth = [30]
+# max_features = ["sqrt"]
+# min_samples_leaf = [2]
+# min_samples_split = [4]
+# bootstrap = [False]
 
-randomized_search_grid = {'n_estimators': n_estimators,
-               'max_depth': max_depth,
-               'max_features': max_features,
-               'min_samples_leaf': min_samples_leaf,
-               'min_samples_split': min_samples_split,
-               'bootstrap': bootstrap}
-randomized_search_grids_dictionary["SPECIFIC_FINAL_4"] = randomized_search_grid
-
-
-
-
-# === SPECIFIC FINAL 5 ===
-# Results:
-n_estimators = [100] 
-max_depth = [30]
-max_features = [6]
-min_samples_leaf = [1]
-min_samples_split = [2]
-bootstrap = [False]
-
-randomized_search_grid = {'n_estimators': n_estimators,
-               'max_depth': max_depth,
-               'max_features': max_features,
-               'min_samples_leaf': min_samples_leaf,
-               'min_samples_split': min_samples_split,
-               'bootstrap': bootstrap}
-randomized_search_grids_dictionary["SPECIFIC_FINAL_5"] = randomized_search_grid
+# randomized_search_grid = {'n_estimators': n_estimators,
+#                'max_depth': max_depth,
+#                'max_features': max_features,
+#                'min_samples_leaf': min_samples_leaf,
+#                'min_samples_split': min_samples_split,
+#                'bootstrap': bootstrap}
+# randomized_search_grids_dictionary["SPECIFIC_FINAL_3"] = randomized_search_grid
 
 
 
 
-# === SPECIFIC FINAL 6 ===
-# Results:
-n_estimators = [200] 
-max_depth = [30]
-max_features = [6]
-min_samples_leaf = [1]
-min_samples_split = [2]
-bootstrap = [False]
+# # === SPECIFIC FINAL 4 ===
+# # Results:
+# n_estimators = [200] 
+# max_depth = [30]
+# max_features = ["sqrt"]
+# min_samples_leaf = [2]
+# min_samples_split = [4]
+# bootstrap = [False]
 
-randomized_search_grid = {'n_estimators': n_estimators,
-               'max_depth': max_depth,
-               'max_features': max_features,
-               'min_samples_leaf': min_samples_leaf,
-               'min_samples_split': min_samples_split,
-               'bootstrap': bootstrap}
-randomized_search_grids_dictionary["SPECIFIC_FINAL_6"] = randomized_search_grid
-
-
-
-
-# === SPECIFIC FINAL 7 ===
-# Results:
-n_estimators = [100] 
-max_depth = [30]
-max_features = [6]
-min_samples_leaf = [2]
-min_samples_split = [4]
-bootstrap = [False]
-
-randomized_search_grid = {'n_estimators': n_estimators,
-               'max_depth': max_depth,
-               'max_features': max_features,
-               'min_samples_leaf': min_samples_leaf,
-               'min_samples_split': min_samples_split,
-               'bootstrap': bootstrap}
-randomized_search_grids_dictionary["SPECIFIC_FINAL_7"] = randomized_search_grid
-
-
-
-# === SPECIFIC FINAL 8 ===
-# Results:
-n_estimators = [200] 
-max_depth = [30]
-max_features = [6]
-min_samples_leaf = [2]
-min_samples_split = [4]
-bootstrap = [False]
-
-randomized_search_grid = {'n_estimators': n_estimators,
-               'max_depth': max_depth,
-               'max_features': max_features,
-               'min_samples_leaf': min_samples_leaf,
-               'min_samples_split': min_samples_split,
-               'bootstrap': bootstrap}
-randomized_search_grids_dictionary["SPECIFIC_FINAL_8"] = randomized_search_grid
+# randomized_search_grid = {'n_estimators': n_estimators,
+#                'max_depth': max_depth,
+#                'max_features': max_features,
+#                'min_samples_leaf': min_samples_leaf,
+#                'min_samples_split': min_samples_split,
+#                'bootstrap': bootstrap}
+# randomized_search_grids_dictionary["SPECIFIC_FINAL_4"] = randomized_search_grid
 
 
 
 
-# === SPECIFIC FINAL 9 ===
-# Results:
-n_estimators = [200] 
-max_depth = [30]
-max_features = ["sqrt"]
-min_samples_leaf = [4]
-min_samples_split = [8]
-bootstrap = [False]
+# # === SPECIFIC FINAL 5 ===
+# # Results:
+# n_estimators = [100] 
+# max_depth = [30]
+# max_features = [6]
+# min_samples_leaf = [1]
+# min_samples_split = [2]
+# bootstrap = [False]
 
-randomized_search_grid = {'n_estimators': n_estimators,
-               'max_depth': max_depth,
-               'max_features': max_features,
-               'min_samples_leaf': min_samples_leaf,
-               'min_samples_split': min_samples_split,
-               'bootstrap': bootstrap}
-randomized_search_grids_dictionary["SPECIFIC_FINAL_9"] = randomized_search_grid
-
-
+# randomized_search_grid = {'n_estimators': n_estimators,
+#                'max_depth': max_depth,
+#                'max_features': max_features,
+#                'min_samples_leaf': min_samples_leaf,
+#                'min_samples_split': min_samples_split,
+#                'bootstrap': bootstrap}
+# randomized_search_grids_dictionary["SPECIFIC_FINAL_5"] = randomized_search_grid
 
 
-# === SPECIFIC FINAL 10 ===
-# Results:
-n_estimators = [200] 
-max_depth = [30]
-max_features = ["sqrt"]
-min_samples_leaf = [8]
-min_samples_split = [16]
-bootstrap = [False]
 
-randomized_search_grid = {'n_estimators': n_estimators,
-               'max_depth': max_depth,
-               'max_features': max_features,
-               'min_samples_leaf': min_samples_leaf,
-               'min_samples_split': min_samples_split,
-               'bootstrap': bootstrap}
-randomized_search_grids_dictionary["SPECIFIC_FINAL_10"] = randomized_search_grid
+
+# # === SPECIFIC FINAL 6 ===
+# # Results:
+# n_estimators = [200] 
+# max_depth = [30]
+# max_features = [6]
+# min_samples_leaf = [1]
+# min_samples_split = [2]
+# bootstrap = [False]
+
+# randomized_search_grid = {'n_estimators': n_estimators,
+#                'max_depth': max_depth,
+#                'max_features': max_features,
+#                'min_samples_leaf': min_samples_leaf,
+#                'min_samples_split': min_samples_split,
+#                'bootstrap': bootstrap}
+# randomized_search_grids_dictionary["SPECIFIC_FINAL_6"] = randomized_search_grid
+
+
+
+
+# # === SPECIFIC FINAL 7 ===
+# # Results:
+# n_estimators = [100] 
+# max_depth = [30]
+# max_features = [6]
+# min_samples_leaf = [2]
+# min_samples_split = [4]
+# bootstrap = [False]
+
+# randomized_search_grid = {'n_estimators': n_estimators,
+#                'max_depth': max_depth,
+#                'max_features': max_features,
+#                'min_samples_leaf': min_samples_leaf,
+#                'min_samples_split': min_samples_split,
+#                'bootstrap': bootstrap}
+# randomized_search_grids_dictionary["SPECIFIC_FINAL_7"] = randomized_search_grid
+
+
+
+# # === SPECIFIC FINAL 8 ===
+# # Results:
+# n_estimators = [200] 
+# max_depth = [30]
+# max_features = [6]
+# min_samples_leaf = [2]
+# min_samples_split = [4]
+# bootstrap = [False]
+
+# randomized_search_grid = {'n_estimators': n_estimators,
+#                'max_depth': max_depth,
+#                'max_features': max_features,
+#                'min_samples_leaf': min_samples_leaf,
+#                'min_samples_split': min_samples_split,
+#                'bootstrap': bootstrap}
+# randomized_search_grids_dictionary["SPECIFIC_FINAL_8"] = randomized_search_grid
+
+
+
+
+# # === SPECIFIC FINAL 9 ===
+# # Results:
+# n_estimators = [200] 
+# max_depth = [30]
+# max_features = ["sqrt"]
+# min_samples_leaf = [4]
+# min_samples_split = [8]
+# bootstrap = [False]
+
+# randomized_search_grid = {'n_estimators': n_estimators,
+#                'max_depth': max_depth,
+#                'max_features': max_features,
+#                'min_samples_leaf': min_samples_leaf,
+#                'min_samples_split': min_samples_split,
+#                'bootstrap': bootstrap}
+# randomized_search_grids_dictionary["SPECIFIC_FINAL_9"] = randomized_search_grid
+
+
+
+
+# # === SPECIFIC FINAL 10 ===
+# # Results:
+# n_estimators = [200] 
+# max_depth = [30]
+# max_features = ["sqrt"]
+# min_samples_leaf = [8]
+# min_samples_split = [16]
+# bootstrap = [False]
+
+# randomized_search_grid = {'n_estimators': n_estimators,
+#                'max_depth': max_depth,
+#                'max_features': max_features,
+#                'min_samples_leaf': min_samples_leaf,
+#                'min_samples_split': min_samples_split,
+#                'bootstrap': bootstrap}
+# randomized_search_grids_dictionary["SPECIFIC_FINAL_10"] = randomized_search_grid
 
 
 
@@ -249,221 +242,221 @@ randomized_search_grids_dictionary["SPECIFIC_FINAL_11"] = randomized_search_grid
 
 
 
-# === SPECIFIC FINAL 12 ===
-# Results:
-n_estimators = [200] 
-max_depth = [30]
-max_features = ["sqrt"]
-min_samples_leaf = [32]
-min_samples_split = [64]
-bootstrap = [False]
+# # === SPECIFIC FINAL 12 ===
+# # Results:
+# n_estimators = [200] 
+# max_depth = [30]
+# max_features = ["sqrt"]
+# min_samples_leaf = [32]
+# min_samples_split = [64]
+# bootstrap = [False]
 
-randomized_search_grid = {'n_estimators': n_estimators,
-               'max_depth': max_depth,
-               'max_features': max_features,
-               'min_samples_leaf': min_samples_leaf,
-               'min_samples_split': min_samples_split,
-               'bootstrap': bootstrap}
-randomized_search_grids_dictionary["SPECIFIC_FINAL_12"] = randomized_search_grid
-
-
-
-
-
-# === SPECIFIC FINAL 13 ===
-# Results:
-n_estimators = [200] 
-max_depth = [40]
-max_features = ["sqrt"]
-min_samples_leaf = [8]
-min_samples_split = [16]
-bootstrap = [False]
-
-randomized_search_grid = {'n_estimators': n_estimators,
-               'max_depth': max_depth,
-               'max_features': max_features,
-               'min_samples_leaf': min_samples_leaf,
-               'min_samples_split': min_samples_split,
-               'bootstrap': bootstrap}
-randomized_search_grids_dictionary["SPECIFIC_FINAL_13"] = randomized_search_grid
-
-
-
-
-# === SPECIFIC FINAL 14 ===
-# Results:
-n_estimators = [200] 
-max_depth = [40]
-max_features = ["sqrt"]
-min_samples_leaf = [16]
-min_samples_split = [32]
-bootstrap = [False]
-
-randomized_search_grid = {'n_estimators': n_estimators,
-               'max_depth': max_depth,
-               'max_features': max_features,
-               'min_samples_leaf': min_samples_leaf,
-               'min_samples_split': min_samples_split,
-               'bootstrap': bootstrap}
-randomized_search_grids_dictionary["SPECIFIC_FINAL_14"] = randomized_search_grid
+# randomized_search_grid = {'n_estimators': n_estimators,
+#                'max_depth': max_depth,
+#                'max_features': max_features,
+#                'min_samples_leaf': min_samples_leaf,
+#                'min_samples_split': min_samples_split,
+#                'bootstrap': bootstrap}
+# randomized_search_grids_dictionary["SPECIFIC_FINAL_12"] = randomized_search_grid
 
 
 
 
 
-# === SPECIFIC FINAL 15 ===
-# Results:
-n_estimators = [200] 
-max_depth = [50]
-max_features = ["sqrt"]
-min_samples_leaf = [8]
-min_samples_split = [16]
-bootstrap = [False]
+# # === SPECIFIC FINAL 13 ===
+# # Results:
+# n_estimators = [200] 
+# max_depth = [40]
+# max_features = ["sqrt"]
+# min_samples_leaf = [8]
+# min_samples_split = [16]
+# bootstrap = [False]
 
-randomized_search_grid = {'n_estimators': n_estimators,
-               'max_depth': max_depth,
-               'max_features': max_features,
-               'min_samples_leaf': min_samples_leaf,
-               'min_samples_split': min_samples_split,
-               'bootstrap': bootstrap}
-randomized_search_grids_dictionary["SPECIFIC_FINAL_15"] = randomized_search_grid
-
-
-
-
-# === SPECIFIC FINAL 16 ===
-# Results:
-n_estimators = [200] 
-max_depth = [50]
-max_features = ["sqrt"]
-min_samples_leaf = [16]
-min_samples_split = [32]
-bootstrap = [False]
-
-randomized_search_grid = {'n_estimators': n_estimators,
-               'max_depth': max_depth,
-               'max_features': max_features,
-               'min_samples_leaf': min_samples_leaf,
-               'min_samples_split': min_samples_split,
-               'bootstrap': bootstrap}
-randomized_search_grids_dictionary["SPECIFIC_FINAL_16"] = randomized_search_grid
+# randomized_search_grid = {'n_estimators': n_estimators,
+#                'max_depth': max_depth,
+#                'max_features': max_features,
+#                'min_samples_leaf': min_samples_leaf,
+#                'min_samples_split': min_samples_split,
+#                'bootstrap': bootstrap}
+# randomized_search_grids_dictionary["SPECIFIC_FINAL_13"] = randomized_search_grid
 
 
 
 
+# # === SPECIFIC FINAL 14 ===
+# # Results:
+# n_estimators = [200] 
+# max_depth = [40]
+# max_features = ["sqrt"]
+# min_samples_leaf = [16]
+# min_samples_split = [32]
+# bootstrap = [False]
 
-# === SPECIFIC FINAL 17 ===
-# Results:
-n_estimators = [200] 
-max_depth = [20]
-max_features = ["sqrt"]
-min_samples_leaf = [8]
-min_samples_split = [16]
-bootstrap = [False]
-
-randomized_search_grid = {'n_estimators': n_estimators,
-               'max_depth': max_depth,
-               'max_features': max_features,
-               'min_samples_leaf': min_samples_leaf,
-               'min_samples_split': min_samples_split,
-               'bootstrap': bootstrap}
-randomized_search_grids_dictionary["SPECIFIC_FINAL_17"] = randomized_search_grid
-
-
-
-
-# === SPECIFIC FINAL 18 ===
-# Results:
-n_estimators = [200] 
-max_depth = [20]
-max_features = ["sqrt"]
-min_samples_leaf = [16]
-min_samples_split = [32]
-bootstrap = [False]
-
-randomized_search_grid = {'n_estimators': n_estimators,
-               'max_depth': max_depth,
-               'max_features': max_features,
-               'min_samples_leaf': min_samples_leaf,
-               'min_samples_split': min_samples_split,
-               'bootstrap': bootstrap}
-randomized_search_grids_dictionary["SPECIFIC_FINAL_18"] = randomized_search_grid
-
-
-
-# === SPECIFIC FINAL 19 ===
-# Results:
-n_estimators = [200] 
-max_depth = [30]
-max_features = [6]
-min_samples_leaf = [8]
-min_samples_split = [16]
-bootstrap = [False]
-
-randomized_search_grid = {'n_estimators': n_estimators,
-               'max_depth': max_depth,
-               'max_features': max_features,
-               'min_samples_leaf': min_samples_leaf,
-               'min_samples_split': min_samples_split,
-               'bootstrap': bootstrap}
-randomized_search_grids_dictionary["SPECIFIC_FINAL_19"] = randomized_search_grid
+# randomized_search_grid = {'n_estimators': n_estimators,
+#                'max_depth': max_depth,
+#                'max_features': max_features,
+#                'min_samples_leaf': min_samples_leaf,
+#                'min_samples_split': min_samples_split,
+#                'bootstrap': bootstrap}
+# randomized_search_grids_dictionary["SPECIFIC_FINAL_14"] = randomized_search_grid
 
 
 
 
-# === SPECIFIC FINAL 20 ===
-# Results:
-n_estimators = [200] 
-max_depth = [30]
-max_features = [6]
-min_samples_leaf = [16]
-min_samples_split = [32]
-bootstrap = [False]
 
-randomized_search_grid = {'n_estimators': n_estimators,
-               'max_depth': max_depth,
-               'max_features': max_features,
-               'min_samples_leaf': min_samples_leaf,
-               'min_samples_split': min_samples_split,
-               'bootstrap': bootstrap}
-randomized_search_grids_dictionary["SPECIFIC_FINAL_20"] = randomized_search_grid
+# # === SPECIFIC FINAL 15 ===
+# # Results:
+# n_estimators = [200] 
+# max_depth = [50]
+# max_features = ["sqrt"]
+# min_samples_leaf = [8]
+# min_samples_split = [16]
+# bootstrap = [False]
 
-
-
-
-# === SPECIFIC FINAL 21 ===
-# Results:
-n_estimators = [200] 
-max_depth = [30]
-max_features = [4]
-min_samples_leaf = [8]
-min_samples_split = [16]
-bootstrap = [False]
-
-randomized_search_grid = {'n_estimators': n_estimators,
-               'max_depth': max_depth,
-               'max_features': max_features,
-               'min_samples_leaf': min_samples_leaf,
-               'min_samples_split': min_samples_split,
-               'bootstrap': bootstrap}
-randomized_search_grids_dictionary["SPECIFIC_FINAL_21"] = randomized_search_grid
+# randomized_search_grid = {'n_estimators': n_estimators,
+#                'max_depth': max_depth,
+#                'max_features': max_features,
+#                'min_samples_leaf': min_samples_leaf,
+#                'min_samples_split': min_samples_split,
+#                'bootstrap': bootstrap}
+# randomized_search_grids_dictionary["SPECIFIC_FINAL_15"] = randomized_search_grid
 
 
 
 
-# === SPECIFIC FINAL 22 ===
-# Results:
-n_estimators = [200] 
-max_depth = [30]
-max_features = [4]
-min_samples_leaf = [16]
-min_samples_split = [32]
-bootstrap = [False]
+# # === SPECIFIC FINAL 16 ===
+# # Results:
+# n_estimators = [200] 
+# max_depth = [50]
+# max_features = ["sqrt"]
+# min_samples_leaf = [16]
+# min_samples_split = [32]
+# bootstrap = [False]
 
-randomized_search_grid = {'n_estimators': n_estimators,
-               'max_depth': max_depth,
-               'max_features': max_features,
-               'min_samples_leaf': min_samples_leaf,
-               'min_samples_split': min_samples_split,
-               'bootstrap': bootstrap}
-randomized_search_grids_dictionary["SPECIFIC_FINAL_22"] = randomized_search_grid
+# randomized_search_grid = {'n_estimators': n_estimators,
+#                'max_depth': max_depth,
+#                'max_features': max_features,
+#                'min_samples_leaf': min_samples_leaf,
+#                'min_samples_split': min_samples_split,
+#                'bootstrap': bootstrap}
+# randomized_search_grids_dictionary["SPECIFIC_FINAL_16"] = randomized_search_grid
+
+
+
+
+
+# # === SPECIFIC FINAL 17 ===
+# # Results:
+# n_estimators = [200] 
+# max_depth = [20]
+# max_features = ["sqrt"]
+# min_samples_leaf = [8]
+# min_samples_split = [16]
+# bootstrap = [False]
+
+# randomized_search_grid = {'n_estimators': n_estimators,
+#                'max_depth': max_depth,
+#                'max_features': max_features,
+#                'min_samples_leaf': min_samples_leaf,
+#                'min_samples_split': min_samples_split,
+#                'bootstrap': bootstrap}
+# randomized_search_grids_dictionary["SPECIFIC_FINAL_17"] = randomized_search_grid
+
+
+
+
+# # === SPECIFIC FINAL 18 ===
+# # Results:
+# n_estimators = [200] 
+# max_depth = [20]
+# max_features = ["sqrt"]
+# min_samples_leaf = [16]
+# min_samples_split = [32]
+# bootstrap = [False]
+
+# randomized_search_grid = {'n_estimators': n_estimators,
+#                'max_depth': max_depth,
+#                'max_features': max_features,
+#                'min_samples_leaf': min_samples_leaf,
+#                'min_samples_split': min_samples_split,
+#                'bootstrap': bootstrap}
+# randomized_search_grids_dictionary["SPECIFIC_FINAL_18"] = randomized_search_grid
+
+
+
+# # === SPECIFIC FINAL 19 ===
+# # Results:
+# n_estimators = [200] 
+# max_depth = [30]
+# max_features = [6]
+# min_samples_leaf = [8]
+# min_samples_split = [16]
+# bootstrap = [False]
+
+# randomized_search_grid = {'n_estimators': n_estimators,
+#                'max_depth': max_depth,
+#                'max_features': max_features,
+#                'min_samples_leaf': min_samples_leaf,
+#                'min_samples_split': min_samples_split,
+#                'bootstrap': bootstrap}
+# randomized_search_grids_dictionary["SPECIFIC_FINAL_19"] = randomized_search_grid
+
+
+
+
+# # === SPECIFIC FINAL 20 ===
+# # Results:
+# n_estimators = [200] 
+# max_depth = [30]
+# max_features = [6]
+# min_samples_leaf = [16]
+# min_samples_split = [32]
+# bootstrap = [False]
+
+# randomized_search_grid = {'n_estimators': n_estimators,
+#                'max_depth': max_depth,
+#                'max_features': max_features,
+#                'min_samples_leaf': min_samples_leaf,
+#                'min_samples_split': min_samples_split,
+#                'bootstrap': bootstrap}
+# randomized_search_grids_dictionary["SPECIFIC_FINAL_20"] = randomized_search_grid
+
+
+
+
+# # === SPECIFIC FINAL 21 ===
+# # Results:
+# n_estimators = [200] 
+# max_depth = [30]
+# max_features = [4]
+# min_samples_leaf = [8]
+# min_samples_split = [16]
+# bootstrap = [False]
+
+# randomized_search_grid = {'n_estimators': n_estimators,
+#                'max_depth': max_depth,
+#                'max_features': max_features,
+#                'min_samples_leaf': min_samples_leaf,
+#                'min_samples_split': min_samples_split,
+#                'bootstrap': bootstrap}
+# randomized_search_grids_dictionary["SPECIFIC_FINAL_21"] = randomized_search_grid
+
+
+
+
+# # === SPECIFIC FINAL 22 ===
+# # Results:
+# n_estimators = [200] 
+# max_depth = [30]
+# max_features = [4]
+# min_samples_leaf = [16]
+# min_samples_split = [32]
+# bootstrap = [False]
+
+# randomized_search_grid = {'n_estimators': n_estimators,
+#                'max_depth': max_depth,
+#                'max_features': max_features,
+#                'min_samples_leaf': min_samples_leaf,
+#                'min_samples_split': min_samples_split,
+#                'bootstrap': bootstrap}
+# randomized_search_grids_dictionary["SPECIFIC_FINAL_22"] = randomized_search_grid
